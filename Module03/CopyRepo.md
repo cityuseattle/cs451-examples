@@ -10,10 +10,10 @@ How to copy a folder from one repository to another repository on GitHub
   * In your account settings, go to the Emails option, and uncheck the "Keep my email address private option."
 * Knowing your Source Repository
   * The repository contains the folder you want to download to your local machine.
-  * Know the GitHub address of  your source repository. For example, I have my HOP03 source directory at https://github.com/cityuseattle/cs451-hos.
+  * Know the GitHub address of  your source repository. For example, I have my H0S03 source directory at https://github.com/your-username/cs451-hos.
 * Knowing your Target Repository
   * It is the repository where you want to copy the folder from your local machine. 
-  * Know the GitHub address of  your target repository. For example, I have my PO03-todos target directory at https://github.com/cityuseattle/cs451-pe-sam.
+  * Know the GitHub address of  your target repository. For example, I have my PO03-todos target directory at https://github.com/your-username/cs451-pe.
 
 ## Copying the directory from the source repository to your local machine
 ### Local Machine
