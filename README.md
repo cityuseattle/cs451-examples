@@ -1,4 +1,4 @@
-# cs624-examples
+# cs451-examples
 HOS Examples for CS 624 Full-Stack Development - Mobile App
 
 Students can find the examples that will be used for their practices in lecture or HOS (Hands-on Skills).
