@@ -41,20 +41,16 @@
   * [CSS Comment Statement](https://www.w3schools.com/css/css_comments.asp)
 
 ## Skills
-  * If you did not set up your CDE with Expo
-    * Install Expo CLI
-      * npm install -g expo-cli
-    * Create your account in [Expo](https://expo.dev/)
+  * Create your account in [Expo](https://expo.dev/)
   * In your Codesapces
     * Log in your Expo account
-      * expo login
+      * npx expo login
     * Test your node environment
       * node --version
       * npx --version
       * npm --version
 
   * Creating an Expo react native mobile app. (Assume your mobile app name is my-mobile-app. Youc an use any app name.)
-    * expo init my-mobile-app
     * cd my-mobile-app
-    * expo start --tunnel
+    * npx expo start --tunnel
       * (If both your computer and your smartphone are connected in the same network, you can type "expo start." But "--tunnel" is preferred to reduce any network errors.)
