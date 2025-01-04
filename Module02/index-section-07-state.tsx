@@ -1,39 +1,44 @@
-import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import {Button, Text, View} from 'react-native';
 
-class Cat extends Component {
-  state = { isHungry: true };
+type CatProps = {
+  name: string;
+};
 
-  render() {
-    return (
-      <View style={{margin: 100}}>
-        <Text style={{color: 'white'}}>
-          I am {this.props.name}, and I am
-          {this.state.isHungry ? ' hungry' : ' full'}!
-        </Text>
-        <Button
-          onPress={() => {
-            this.setState({ isHungry: false });
-          }}
-          disabled={!this.state.isHungry}
-          title={
-            this.state.isHungry ? 'Pour me some milk, please!' : 'Thank you!'
-          }
-        />
-      </View>
-    );
-  }
-}
+const Cat = (props: CatProps) => {
+  const [isHungry, setIsHungry] = useState(true);
 
-class Cafe extends Component {
-  render() {
-    return (
-      <>
-        <Cat name="Munkustrap" />
-        <Cat name="Spot" />
-      </>
-    );
-  }
-}
+  return (
+    <View
+        style={
+        {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#ffff00'
+        } 
+        }>
+      <Text>
+        I am {props.name}, and I am {isHungry ? 'hungry' : 'full'}!
+      </Text>
+      <Button
+        onPress={() => {
+          setIsHungry(false);
+        }}
+        disabled={!isHungry}
+        title={isHungry ? 'Give me some food, please!' : 'Thank you!'}
+      />
+    </View>
+  );
+};
 
-export default Cafe;
+const App = () => {
+  return (
+    <>
+      <Cat name="Munkustrap" />
+      <Cat name="Spot" />
+    </>
+  );
+};
+
+export default App;
