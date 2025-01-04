@@ -1,5 +1,5 @@
 # cs451-examples
-HOS Examples for CS 624 Full-Stack Development - Mobile App
+HOS Examples for CS451 Frontend Development
 
 Students can find the examples that will be used for their practices in lecture or HOS (Hands-on Skills).
 If you find any mistakes, please contact chungsam@cityu.edu.
