@@ -12,8 +12,8 @@
 import React, { Component } from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
 
-import Heading from './app/Heading'
-import Input from './app/Input'
+import Heading from './Heading'
+import Input from './Input'
 
 class App extends Component {
   constructor() {
