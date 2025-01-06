@@ -1,4 +1,4 @@
-# HOP02 Components and Styling
+# HOS02 Components and Styling
 ##  Learning Outcomes
 1. Understand React Native core components and styling.
 2. Apply components and styling to simple React Native mobile apps.
@@ -21,6 +21,6 @@
 
 ## Skills
   * Caution: Both your computer and your network are connected in teh same network.
-  * **expo init my-mobile-app**
+  * **npx create-expo-app my-mobile-app**
   * **cd my-mobile-app**
-  * **expo start --tunnel**
+  * **npx expo start --tunnel**

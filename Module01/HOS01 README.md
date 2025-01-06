@@ -51,6 +51,7 @@
       * npm --version
 
   * Creating an Expo react native mobile app. (Assume your mobile app name is my-mobile-app. Youc an use any app name.)
+    * npx create-expo-app my-mobile-app
     * cd my-mobile-app
     * npx expo start --tunnel
       * (If both your computer and your smartphone are connected in the same network, you can type "expo start." But "--tunnel" is preferred to reduce any network errors.)
