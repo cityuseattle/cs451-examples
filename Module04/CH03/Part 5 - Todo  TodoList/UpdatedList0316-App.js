@@ -5,10 +5,10 @@
 import React, { Component } from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
 
-import Heading from './app/Heading'
-import Input from './app/Input'
-import Button from './app/Button'
-import TodoList from './app/TodoList'
+import Heading from './Heading'
+import Input from './Input'
+import Button from './Button'
+import TodoList from './TodoList'
 
 let todoIndex = 0
 
