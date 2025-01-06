@@ -1,4 +1,4 @@
-# HOP03 React Native Fundamentals I
+# HOS03 React Native Fundamentals I
 ##  Learning Outcomes
 1. Understand React Native fundamentals such as components, JSX, props, and state.
 2. Apply React Native fundamentals to simple React Native mobile apps.
@@ -40,6 +40,6 @@
 * [React Color](https://casesandberg.github.io/react-color/)
 ## Skills
   * Caution: Both your computer and your network are connected in the same network.
-  * **expo init my-mobile-app**
+  * **npx create-expo-app my-mobile-app**
   * **cd my-mobile-app**
-  * **expo start --tunnel**
+  * **npx expo start --tunnel**
