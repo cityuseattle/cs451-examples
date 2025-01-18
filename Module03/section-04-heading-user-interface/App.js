@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Text, View, ScrollView, StyleSheet } from 'react-native'
+import { Component } from 'react'
+import { View, ScrollView, StyleSheet } from 'react-native'
 import Heading from './Heading';
 
 class App extends Component {
