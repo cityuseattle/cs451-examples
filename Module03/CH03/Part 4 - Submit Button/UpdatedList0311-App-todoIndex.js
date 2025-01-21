@@ -1,4 +1,4 @@
-// Listing 3.8 Creating the inputChange function
+// Listing 3.11 Creating the todoIndex variable
 
 /*
   Now that the value of the inputValue is being stored in the state, 
@@ -12,6 +12,8 @@ import { View, ScrollView, StyleSheet } from 'react-native'
 
 import Heading from './Heading'
 import Input from './Input'
+
+let todoIndex = 0
 
 class App extends Component {
   constructor() {
@@ -39,6 +41,36 @@ class App extends Component {
     this.setState({ inputValue })
   }
 
+  /*
+    Checks whether inputValue is empty or only contains whitespace. If it’s empty, returns without doing anything else.
+
+    If inputValue isn’t empty, creates and assigns a todo variable an object with a title, a todoIndex, 
+    and a complete Boolean (you’ll create the todoIndex shortly).
+
+    Increments the todoIndex
+    
+    Pushes the new todo to the existing array of todos
+    
+    Sets the state of the todos to match the updated array of this.state.todos, and resets inputValue to an empty string
+    
+    Once the state is set, you have the option to pass a callback function. 
+    Here, a callback function from setState logs out the state to make sure everything is working.
+  */
+  submitTodo () { 
+    if (this.state.inputValue.match(/^\s*$/)) {   
+      return  
+    }   
+    const todo = {   
+      title: this.state.inputValue,   
+      todoIndex,  
+      complete: false   
+    }   
+    todoIndex++    
+    const todos = [...this.state.todos, todo]   
+    this.setState({ todos, inputValue: '' }, () => {    
+      console.log('State: ', this.state)
+    }) 
+  }
 
   /*
     <Input >

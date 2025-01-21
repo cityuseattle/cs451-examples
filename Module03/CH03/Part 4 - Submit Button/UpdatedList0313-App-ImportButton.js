@@ -1,17 +1,21 @@
-// Listing 3.8 Creating the inputChange function
+// Listing 3.13 Importing the Button component
 
 /*
-  Now that the value of the inputValue is being stored in the state, 
-  you need to create a button to add the items to a list of todos. 
-  Before you do, create a function that you’ll bind to the button to 
-  add the new todo to the array of todos defined in the constructor. 
-  Call this function submitTodo, and place it after the inputChange function and before the render function.
+  Imports the new Button component
+  
+  Binds the method to the class in the constructor. 
+  Because you’re using classes, functions won’t be auto-bound to the class.
+  
+  Place the Button below the Input component, and pass in submitTodo as a prop.
 */
 import React, { Component } from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
 
 import Heading from './Heading'
 import Input from './Input'
+import Button from './Button'
+
+let todoIndex = 0
 
 class App extends Component {
   constructor() {
@@ -21,6 +25,7 @@ class App extends Component {
       todos: [],
       type: 'All'
     }
+    this.submitTodo = this.submitTodo.bind(this) 
   }
 
   /*
@@ -39,6 +44,36 @@ class App extends Component {
     this.setState({ inputValue })
   }
 
+  /*
+    Checks whether inputValue is empty or only contains whitespace. If it’s empty, returns without doing anything else.
+
+    If inputValue isn’t empty, creates and assigns a todo variable an object with a title, a todoIndex, 
+    and a complete Boolean (you’ll create the todoIndex shortly).
+
+    Increments the todoIndex
+    
+    Pushes the new todo to the existing array of todos
+    
+    Sets the state of the todos to match the updated array of this.state.todos, and resets inputValue to an empty string
+    
+    Once the state is set, you have the option to pass a callback function. 
+    Here, a callback function from setState logs out the state to make sure everything is working.
+  */
+  submitTodo () { 
+    if (this.state.inputValue.match(/^\s*$/)) {   
+      return  
+    }   
+    const todo = {   
+      title: this.state.inputValue,   
+      todoIndex,  
+      complete: false   
+    }   
+    todoIndex++    
+    const todos = [...this.state.todos, todo]   
+    this.setState({ todos, inputValue: '' }, () => {    
+      console.log('State: ', this.state)
+    }) 
+  }
 
   /*
     <Input >
@@ -56,6 +91,7 @@ class App extends Component {
               inputValue={this.state.inputValue}
               inputChange={(text) => this.inputChange(text)} />
           </View>
+          <Button submitTodo={this.submitTodo} />
         </ScrollView>
       </View>
     )
