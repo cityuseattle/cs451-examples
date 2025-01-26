@@ -5,7 +5,7 @@ import {Text, TouchableHighlight, View} from 'react-native'
 /*
     Imports multiple stylesheets exported from styles.js
 */
-import { styles, buttons } from './component/styles'
+import { styles, buttons } from './styles'
 
 class App extends Component {
   state = {

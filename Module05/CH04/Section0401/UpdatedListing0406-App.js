@@ -15,7 +15,7 @@ import { Button, StyleSheet, View } from 'react-native';
 /*
     Imports the getStyleSheet function from the externalized styles
 */
-import getStyleSheet from './component/styles';
+import getStyleSheet from './styles';
 
 export default class App extends Component {
     /*
