@@ -1,36 +1,50 @@
-import React, { Component } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import React, { useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { LogBox } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-LogBox.ignoreLogs([
-  'Non-serializable values were found in the navigation state',
-]);
-
-import Cities from './src/Cities/Cities'
-import AddCity from './src/AddCity/AddCity'
+import Cities from './src/Cities/Cities';
+import AddCity from './src/AddCity/AddCity';
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-export default class App extends Component {
-  state = {
-    cities: []
-  }
-
-  addCity = (city) => {
-    const cities = this.state.cities
-    cities.push(city)
-    this.setState({ cities })
-  }
-
-  render() {
+function CitiesStackScreen({ cities }) {
+  function CityPlaceholder() {
     return (
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Cities"  initialParams={{cities: this.state.cities, addCity: this.addCity}} component={Cities} />
-          <Tab.Screen name="AddCity" initialParams={{cities: this.state.cities, addCity: this.addCity}} component={AddCity} />
-        </Tab.Navigator>
-      </NavigationContainer>
+      <View>
+        <Text>City Details Placeholder</Text>
+      </View>
     );
   }
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Cities">
+        {(props) => <Cities {...props} cities={cities} />}
+      </Stack.Screen>
+      <Stack.Screen name="City" component={CityPlaceholder} />
+    </Stack.Navigator>
+  );
+}
+
+export default function App() {
+  const [cities, setCities] = useState([]);
+
+  const addCity = (city) => {
+    setCities((prevCities) => [...prevCities, city]);
+  };
+
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Cities">
+          {(props) => <CitiesStackScreen {...props} cities={cities} />}
+        </Tab.Screen>
+        <Tab.Screen name="AddCity">
+          {(props) => <AddCity {...props} addCity={addCity} />}
+        </Tab.Screen>
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
 }
