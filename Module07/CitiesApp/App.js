@@ -38,7 +38,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Cities">
+        <Tab.Screen name="CitiesNav">
           {(props) => <CitiesStackScreen {...props} cities={cities} />}
         </Tab.Screen>
         <Tab.Screen name="AddCity">
