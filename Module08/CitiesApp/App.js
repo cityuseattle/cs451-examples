@@ -71,7 +71,7 @@ export default class App extends Component {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen
-            name="Cities"
+            name="CitiesNav"
             children={(props) => (
               <CitiesStackScreen
                 {...props}
