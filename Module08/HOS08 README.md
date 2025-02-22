@@ -1,4 +1,4 @@
-# HOP07 Navigation II
+# HOP08 Navigation II
 ##  Learning Outcomes
 1. Understand the differences between React Native navigation and web navigation.
 2. Apply tab-based navigation to a mobile app.

@@ -12,5 +12,5 @@ If you find any mistakes, please contact chungsam@cityu.edu.
 * Module 06 - React Native Styling II
 * Module 07 - React Native Navigation I
 * Module 08 - React Native Navigation II
-* Module 09 - React Native Networking I
-* Module 10 - React Native Networking II
+* Module 09 - NoSQL
+* Module 10 - Full-Stack Mobile Application
