@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const API_URL = '<backend url>/record';
+const API_URL = '<Use your backend url>/record';
 
 function RecordScreen() {
   const [records, setRecords] = useState([]);
