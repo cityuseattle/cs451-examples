@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const API_URL = 'https://super-telegram-77q6jrvv54ghwqjq-5050.app.github.dev/record';
+const API_URL = '<backend url>/record';
 
 function RecordScreen() {
   const [records, setRecords] = useState([]);
