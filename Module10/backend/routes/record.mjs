@@ -1,5 +1,4 @@
 import express from "express";
-import axios from 'axios';
 import db from "../db/conn.mjs";
 import { ObjectId } from "mongodb";
 
